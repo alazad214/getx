@@ -15,15 +15,25 @@ class Home extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             onPressed: () {
-              Get.snackbar("Message", "You are a briliant person in the world",
-                  snackPosition: SnackPosition.BOTTOM,
-                  borderRadius: 20,
-                  backgroundColor: Colors.amberAccent,
-                  icon: Icon(Icons.message),
-                  duration: Duration(seconds: 3),
-                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20));
+              Get.defaultDialog(
+                  title: "do you now exit exit?",
+                  titleStyle: const TextStyle(color: Colors.black),
+                  backgroundColor: Colors.white,
+                  radius: 15,
+                  barrierDismissible: false,
+                  cancel: const Text("not now"),
+                  confirm: const Text("Yes"),
+                  onCancel: () {
+                    Get.back(closeOverlays: true);
+                  },
+                  onConfirm: () {
+                    Get.back(closeOverlays: true);
+                  },
+                buttonColor: Colors.blue
+
+                  );
             },
-            child: Text("Click me")),
+            child: const Text("Click me")),
       ),
     );
   }
