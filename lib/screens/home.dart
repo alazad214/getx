@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_example/screens/another_screen.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -15,23 +16,9 @@ class Home extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             onPressed: () {
-              Get.bottomSheet(
-                backgroundColor: Colors.amberAccent,
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  height: 200,
-                  width: double.infinity,
-                  child:  Column(
-                    children: [
-                      Text("Save bangladesh students"),
-                      Text("Save bangladesh students"),
-                      Text("Save bangladesh students"),
-                      ElevatedButton(onPressed: (){}, child: Text("do you now exit?"))
-                    ],
-                  ),
-                ),
-                enableDrag: true,
-              );
+            //Get.to(()=>AnotherScreen());
+           // Get.off(()=>AnotherScreen());
+            Get.offAll(()=>AnotherScreen());
             },
             child: const Text("Click me")),
       ),
