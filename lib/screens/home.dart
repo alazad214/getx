@@ -15,23 +15,23 @@ class Home extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             onPressed: () {
-              Get.defaultDialog(
-                  title: "do you now exit exit?",
-                  titleStyle: const TextStyle(color: Colors.black),
-                  backgroundColor: Colors.white,
-                  radius: 15,
-                  barrierDismissible: false,
-                  cancel: const Text("not now"),
-                  confirm: const Text("Yes"),
-                  onCancel: () {
-                    Get.back(closeOverlays: true);
-                  },
-                  onConfirm: () {
-                    Get.back(closeOverlays: true);
-                  },
-                buttonColor: Colors.blue
-
-                  );
+              Get.bottomSheet(
+                backgroundColor: Colors.amberAccent,
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  height: 200,
+                  width: double.infinity,
+                  child:  Column(
+                    children: [
+                      Text("Save bangladesh students"),
+                      Text("Save bangladesh students"),
+                      Text("Save bangladesh students"),
+                      ElevatedButton(onPressed: (){}, child: Text("do you now exit?"))
+                    ],
+                  ),
+                ),
+                enableDrag: true,
+              );
             },
             child: const Text("Click me")),
       ),
